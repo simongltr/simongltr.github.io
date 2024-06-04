@@ -602,18 +602,5 @@ gpgconf --kill gpg-agent
 
 Replace ssh-agent with gpg-agent by adding to ~/.zshrc:
 ```
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
-```
-
-Enable the SSH support for your auth subkey:
-```
-source ~/.zshrc
-gpg --list-keys --with-keygrip
-echo KEYGRIP_OF_AUTH_KEY >> ~/.gnupg/sshcontrol
-gpg --export-ssh-key $EMAIL
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 ```
