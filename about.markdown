@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Quant by training but I focus on Bitcoin. I identify as a Bitcoin Wizard.
+Quant by training but I focus on Bitcoin.
 
 ## Contact me
 
